@@ -8,7 +8,14 @@ window.addEventListener("DOMContentLoaded", function(){
                 "task uno",
                 "task due",
                 "task tre"
-            ]
+            ],
+            newTask: ""
+        },
+        methods:{
+            onClickAdd(){
+                this.tasksList.push(this.newTask);
+                this.newTask= ""
+            }
         } 
     })
 })
