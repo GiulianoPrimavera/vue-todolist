@@ -5,13 +5,18 @@ window.addEventListener("DOMContentLoaded", function(){
         el: "#root",
         data:{
             tasksList: [
-    
+                
             ],
-            newTask: ""
+            newTask: "",
+            checkMark: false
         },
         methods:{
             onClickAdd(){
-                this.tasksList.push(this.newTask);
+                if(this.newTask.trim() === ""){
+                    return
+                }
+
+                this.tasksList.push(this.newTask.trim());
                 this.newTask= ""
             },
             onClickRemove(indice){
