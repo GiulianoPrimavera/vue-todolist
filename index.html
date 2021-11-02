@@ -34,7 +34,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-6">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Todo" v-model="newTask">
+                        <input type="text" class="form-control" placeholder="Todo" v-model="newTask" v-on:keyup.enter="onClickAdd()">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" @click="onClickAdd()">Add Task</button>
                         </div>
@@ -46,11 +46,11 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-6">
                     <ul class="list-group">
-                        <li class="list-group-item p-3 d-flex justify-content-between" v-for="singleTask in tasksList">
+                        <li class="list-group-item p-3 d-flex justify-content-between" v-for="singleTask, i in tasksList">
                             {{ singleTask }}
-                            <a href="#" class="px-2">
+                            <button class="px-2" @click="onClickRemove(i)">
                                 <i class="fas fa-times"></i>
-                            </a>
+                            </button>
                         </li>
                     </ul>
                 </div>
