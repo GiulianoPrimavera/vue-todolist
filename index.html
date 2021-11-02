@@ -34,9 +34,11 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-6">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Todo" v-model="newTask" v-on:keyup.enter="onClickAdd()">
+                        <input type="text" class="form-control" placeholder="Todo" v-model="newTask"
+                            v-on:keyup.enter="onClickAdd()">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" @click="onClickAdd()">Add Task</button>
+                            <button class="btn btn-outline-secondary" type="button" @click="onClickAdd()">Add
+                                Task</button>
                         </div>
                     </div>
                 </div>
@@ -46,12 +48,16 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-6">
                     <div v-if="tasksList.length === 0">
-                       <p class="empty_text_message">la lista di cose da fare è vuota, aggiungi qualcosa...</p>
+                        <p class="empty_text_message">la lista di cose da fare è vuota, aggiungi qualcosa...</p>
                     </div>
                     <div v-else>
                         <ul class="list-group">
-                            <li class="list-group-item p-3 d-flex justify-content-between" v-for="singleTask, i in tasksList">
+                            <li class="list-group-item p-3 d-flex justify-content-between align-items-center"
+                                v-for="singleTask, i in tasksList">
+
+                                <input type="checkbox" v-model="checkMark">
                                 {{ singleTask }}
+
                                 <button class="px-2" @click="onClickRemove(i)">
                                     <i class="fas fa-times"></i>
                                 </button>
@@ -61,7 +67,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
 </body>
