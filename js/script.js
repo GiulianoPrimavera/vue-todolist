@@ -15,6 +15,9 @@ window.addEventListener("DOMContentLoaded", function(){
             onClickAdd(){
                 this.tasksList.push(this.newTask);
                 this.newTask= ""
+            },
+            onClickRemove(indice){
+                this.tasksList.splice(indice, 1)
             }
         } 
     })
