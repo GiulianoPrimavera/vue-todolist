@@ -33,9 +33,9 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-6">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Todo">
+                        <input type="text" class="form-control" placeholder="Todo" v-model="newTask">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button">Send</button>
+                            <button class="btn btn-outline-secondary" type="button" @click="onClickAdd()">Add Task</button>
                         </div>
                     </div>
                 </div>
