@@ -45,14 +45,19 @@
             <!-- tasks todo elements -->
             <div class="row d-flex justify-content-center">
                 <div class="col-6">
-                    <ul class="list-group">
-                        <li class="list-group-item p-3 d-flex justify-content-between" v-for="singleTask, i in tasksList">
-                            {{ singleTask }}
-                            <button class="px-2" @click="onClickRemove(i)">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </li>
-                    </ul>
+                    <div v-if="tasksList.length === 0">
+                       <p class="empty_text_message">la lista di cose da fare è vuota, aggiungi qualcosa...</p>
+                    </div>
+                    <div v-else>
+                        <ul class="list-group">
+                            <li class="list-group-item p-3 d-flex justify-content-between" v-for="singleTask, i in tasksList">
+                                {{ singleTask }}
+                                <button class="px-2" @click="onClickRemove(i)">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
