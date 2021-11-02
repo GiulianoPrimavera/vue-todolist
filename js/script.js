@@ -5,9 +5,7 @@ window.addEventListener("DOMContentLoaded", function(){
         el: "#root",
         data:{
             tasksList: [
-                "task uno",
-                "task due",
-                "task tre"
+    
             ],
             newTask: ""
         },
