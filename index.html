@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <!-- main container -->
+        <!-- add todo element container -->
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-6">
@@ -40,7 +40,19 @@
                     </div>
                 </div>
             </div>
+
+            <!-- tasks todo elements -->
+            <div class="row d-flex justify-content-center">
+                <div class="col-6">
+                    <ul class="list-group">
+                        <li class="list-group-item" v-for="singleTask in tasksList">
+                            {{ singleTask }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
+        
     </div>
 
 </body>

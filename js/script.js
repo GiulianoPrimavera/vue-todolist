@@ -4,7 +4,11 @@ window.addEventListener("DOMContentLoaded", function(){
     const vueApp = new Vue ({
         el: "#root",
         data:{
-            message : "hello world"
+            tasksList: [
+                "task uno",
+                "task due",
+                "task tre"
+            ]
         } 
     })
 })
