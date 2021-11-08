@@ -26,6 +26,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
             },
             onClickRemove(indice) {
+                //quando clicco per eliminare prima metto il checked del messaggio a false e poi lo elimino, così che il valore di checked non interfrisce con gli altri elementi
+                this.$refs.input[indice].checked = false;
                 this.tasksList.splice(indice, 1);
             },
             onClickCheckBox(indice){
