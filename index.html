@@ -55,8 +55,8 @@
                             <li class="list-group-item p-3 d-flex justify-content-between align-items-center"
                                 v-for="singleTask, i in tasksList">
 
-                                <input type="checkbox" v-model="checkMark">
-                                {{ singleTask }}
+                                <input type="checkbox" @change="onClickCheckBox(i)" id="check_box">
+                                <p :class="singleTask.checkBox === true ? 'line_through' : ''">{{ singleTask.text }}</p> 
 
                                 <button class="px-2" @click="onClickRemove(i)">
                                     <i class="fas fa-times"></i>

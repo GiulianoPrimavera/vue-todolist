@@ -5,10 +5,9 @@ window.addEventListener("DOMContentLoaded", function () {
         el: "#root",
         data: {
             tasksList: [
-
+                
             ],
-            newTask: "",
-            checkMark: false
+            newTask: ""
         },
         methods: {
             onClickAdd() {
@@ -21,12 +20,22 @@ window.addEventListener("DOMContentLoaded", function () {
                     return
                 }
 
-                this.tasksList.push(this.newTask.trim());
+                this.tasksList.push({text: this.newTask.trim(), checkBox: false});
+                console.log(this.tasksList);
                 this.newTask = "";
 
             },
             onClickRemove(indice) {
-                this.tasksList.splice(indice, 1)
+                this.tasksList.splice(indice, 1);
+            },
+            onClickCheckBox(indice){
+                if(this.tasksList[indice].checkBox === false){
+                    this.tasksList[indice].checkBox = true;
+                    console.log(`la checbox del task numero ${indice} è`, this.tasksList[indice].checkBox);
+                }else {
+                    this.tasksList[indice].checkBox = false;
+                    console.log(`la checbox del task numero ${indice} è`, this.tasksList[indice].checkBox);
+                }
             }
         }
     })
