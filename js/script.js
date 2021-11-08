@@ -28,16 +28,21 @@ window.addEventListener("DOMContentLoaded", function () {
 
                 /* questo if() valuta cinque possibili casi 
                     -l'elemento da eliminare è l'ultimo della lista --> lo elimino
+
                     -l'elemento da eliminare è checked === true, il secondo è false --> setto checked a false dell'elemento che devo eliminare ed elimino l'elemento 
                     -entrambi elementi sono checked === false --> elimino l'elemento
-                        -(per questi tre casi uso lo stesso codice dato che non interferisce con gli altri)
+                        -(per questi due casi uso lo stesso codice dato che non interferisce con gli altri)
                     
                     -l'elemento da eliminare è checked === false, il secondo è true --> setto il checked a true dell'elemento da eliminare e a false dell'elemento che viene dopo di lui, poi elimino l'elemento
                     - entrambi gli elementi sono checked === true --> setto il checked a false dell'elemento che viene dopo di lui ed elimino l'elemento
                                 */
 
-                if (indice === this.tasksList.length - 1 ||  //se è l'ultimo della lista (indifferentemente dal valore di checked) eseguo il codice
-                    this.$refs.input[indice].checked === true && this.$refs.input[indice + 1].checked === false ||
+                //separo questo caso dagli altri e fermo la funzione così che la console non da errore nel leggere "checked"
+                if(indice === this.tasksList.length - 1){
+                    this.tasksList.splice(indice, 1);  
+                    return
+                }
+                if (this.$refs.input[indice].checked === true && this.$refs.input[indice + 1].checked === false ||
                     this.$refs.input[indice].checked === false && this.$refs.input[indice + 1].checked === false) {
 
                     this.$refs.input[indice].checked = false;
